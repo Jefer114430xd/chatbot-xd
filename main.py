@@ -158,12 +158,11 @@ async def start(client, message):
                             reply_markup=buttons)
         
     else:
-        buttons = [[InlineKeyboardButton("Support", url="https://t.me/metavoidsupport"),
-                    InlineKeyboardButton("Channel", url="https://t.me/metavoid"),
-                    InlineKeyboardButton("Repo", url="https://github.com/metavoidteam/kukichatbot")
+        buttons = [[InlineKeyboardButton("grupo", url="https://t.me/thekillpro"),
+                    InlineKeyboardButton("Creador", url="https://t.me/jefer114430x"),
                     ]]
-        Photo = "https://telegra.ph/file/b04509cc8486f23690bba.jpg"
-        await message.reply_photo(Photo, caption=f"Hello [{message.from_user.first_name}](tg://user?id={message.from_user.id}), Machine Learning Chat Bot that can talk about any topic in any language\n /help - Help Commands\n Powered By @MetaVoid", reply_markup=InlineKeyboardMarkup(buttons))
+        Photo = "https://telegra.ph/file/9d93bf25d537e6ed1a435.jpg"
+        await message.reply_photo(Photo, caption=f"Hola [{message.from_user.first_name}](tg://user?id={message.from_user.id}), Machine Learning Chat Bot that can talk about any topic in any language\n /help - Help Commands\n", reply_markup=InlineKeyboardMarkup(buttons))
 
 
 
