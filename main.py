@@ -43,14 +43,14 @@ async def addchat(_, message):
             await is_admins(chat_id)
         ):
             return await message.reply_text(
-                "You are not admin"
+                "tu no eres administrador"
             )
     is_kuki = kuki.find_one({"chat_id": message.chat.id})
     if not is_kuki:
         kuki.insert_one({"chat_id": message.chat.id})
-        await message.reply_text(f"✅ | Successfully\nKuki Chatbot of this Group is set to @{message.chat.username}\n Requested by [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n© @MetaVoid")
+        await message.reply_text(f"✅ | chatbot activado correctamente @{message.chat.username}\n pedido por [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n© @thekillpro")
     else:
-        await message.reply_text(f"Already Setup Kuki Chatbot of this Group Is @{message.chat.username}")
+        await message.reply_text(f"ya estaba activado el chatbot anteriormente @{message.chat.username}")
 
 
 @bot.on_message(
@@ -67,14 +67,14 @@ async def rmchat(_, message):
             await is_admins(chat_id)
         ):
             return await message.reply_text(
-                "You are not admin"
+                "tu no eres administrador"
             )
     is_kuki = kuki.find_one({"chat_id": message.chat.id})
     if not is_kuki:
-        await message.reply_text("Already Kuki ChatBot Disable")
+        await message.reply_text("el chatbot ya estaba desactivado")
     else:
         kuki.delete_one({"chat_id": message.chat.id})
-        await message.reply_text("✅ | Kuki Chatbot is disable!")
+        await message.reply_text("✅ | chatbot desactivado!")
 
 
 @bot.on_message(
@@ -152,17 +152,17 @@ async def start(client, message):
     busername = self.username
     if message.chat.type != "private":
         buttons = InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="Click here",
+            [[InlineKeyboardButton(text="Click aqui",
                 url=f"t.me/kukichatbot?start")]])
-        await message.reply("Contact me in PM",
+        await message.reply("escribeme en privado",
                             reply_markup=buttons)
         
     else:
-        buttons = [[InlineKeyboardButton("grupo", url="https://t.me/thekillpro"),
+        buttons = [[InlineKeyboardButton("Grupo", url="https://t.me/thekillpro"),
                     InlineKeyboardButton("Creador", url="https://t.me/jefer114430x"),
                     ]]
-        Photo = "https://telegra.ph/file/9d93bf25d537e6ed1a435.jpg"
-        await message.reply_photo(Photo, caption=f"Hola [{message.from_user.first_name}](tg://user?id={message.from_user.id}), Machine Learning Chat Bot that can talk about any topic in any language\n /help - Help Commands\n", reply_markup=InlineKeyboardMarkup(buttons))
+        Photo = "https://telegra.ph/file/12ef22cb960aabaa91714.jpg"
+        await message.reply_photo(Photo, caption=f"ʜᴏʟᴀ 👋 [{message.from_user.first_name}](tg://user?id={message.from_user.id}),  sᴏʏ ᴜɴ ʙᴏᴛ ᴅᴇ ᴀᴅᴍɪɴɪsᴛʀᴀᴄɪᴏɴ ᴄᴏɴ ғᴜɴᴄɪᴏɴᴇs ʙᴀsɪᴄᴀs\n y tambien soy un chatbot\n", reply_markup=InlineKeyboardMarkup(buttons))
 
 
 
@@ -172,13 +172,13 @@ async def help(client, message):
     busername = self.username
     if message.chat.type != "private":
         buttons = InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="Click here",
+            [[InlineKeyboardButton(text="Click aqui",
                 url=f"t.me/kukichatbot?start=help_")]])
-        await message.reply("Contact me in PM",
+        await message.reply("escribeme en privado",
                             reply_markup=buttons)
         
     else:    
-        await message.reply_text("/start - Start The Bot\n/chat - Send a message to this bot\n/setupchat - Active Kuki Chatbot In Group\n/removechat - Disable Kuki Chatbot In Group")
+        await message.reply_text("/start - iniciar el bot\n/chat - enviar un mensaje a este bot\n/setupchat - activar chatbot en tu grupo\n/removechat - Desactivar chatbot en tu grupo")
 
 
 
