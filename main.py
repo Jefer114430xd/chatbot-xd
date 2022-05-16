@@ -186,7 +186,7 @@ async def start(client, message):
                     InlineKeyboardButton("Creador", url="https://t.me/jefer114430x"),
                     ]]
         Photo = "https://telegra.ph/file/12ef22cb960aabaa91714.jpg"
-        await message.reply_photo(Photo, caption=f"ʜᴏʟᴀ 👋 [{message.from_user.first_name}](tg://user?id={message.from_user.id}),  sᴏʏ ᴜɴ ʙᴏᴛ ᴅᴇ ᴀᴅᴍɪɴɪsᴛʀᴀᴄɪᴏɴ ᴄᴏɴ ғᴜɴᴄɪᴏɴᴇs ʙᴀsɪᴄᴀs\n y tambien soy un chatbot\n", reply_markup=InlineKeyboardMarkup(buttons))
+        await message.reply_photo(Photo, caption=f"ʜᴏʟᴀ 👋 [{message.from_user.first_name}](tg://user?id={message.from_user.id}),\n", reply_markup=InlineKeyboardMarkup(buttons))
 
 
 
